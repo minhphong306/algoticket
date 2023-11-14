@@ -1,0 +1,315 @@
+{
+  "name": "Algoticket",
+  "desc": "",
+  "methods": [
+    {
+      "name": "createApplication",
+      "args": [],
+      "desc": "",
+      "returns": {
+        "type": "void",
+        "desc": ""
+      }
+    },
+    {
+      "name": "createEvent",
+      "args": [
+        {
+          "name": "name",
+          "type": "string",
+          "desc": ""
+        },
+        {
+          "name": "nft1",
+          "type": "uint64",
+          "desc": ""
+        },
+        {
+          "name": "nft2",
+          "type": "uint64",
+          "desc": ""
+        },
+        {
+          "name": "nft3",
+          "type": "uint64",
+          "desc": ""
+        },
+        {
+          "name": "nft1price",
+          "type": "uint64",
+          "desc": ""
+        },
+        {
+          "name": "nft2price",
+          "type": "uint64",
+          "desc": ""
+        },
+        {
+          "name": "nft3price",
+          "type": "uint64",
+          "desc": ""
+        }
+      ],
+      "desc": "",
+      "returns": {
+        "type": "void",
+        "desc": ""
+      }
+    },
+    {
+      "name": "mintNFT",
+      "args": [
+        {
+          "name": "name",
+          "type": "string",
+          "desc": ""
+        },
+        {
+          "name": "url",
+          "type": "string",
+          "desc": ""
+        },
+        {
+          "name": "eventId",
+          "type": "uint64",
+          "desc": ""
+        },
+        {
+          "name": "nftType",
+          "type": "uint64",
+          "desc": ""
+        },
+        {
+          "name": "payment",
+          "type": "pay",
+          "desc": ""
+        }
+      ],
+      "desc": "",
+      "returns": {
+        "type": "uint64",
+        "desc": ""
+      }
+    },
+    {
+      "name": "listingNFT",
+      "args": [
+        {
+          "name": "nft",
+          "type": "asset",
+          "desc": ""
+        },
+        {
+          "name": "price",
+          "type": "uint64",
+          "desc": ""
+        },
+        {
+          "name": "axfer",
+          "type": "axfer",
+          "desc": ""
+        }
+      ],
+      "desc": "",
+      "returns": {
+        "type": "void",
+        "desc": ""
+      }
+    },
+    {
+      "name": "unListingNFT",
+      "args": [
+        {
+          "name": "orderId",
+          "type": "uint64",
+          "desc": ""
+        }
+      ],
+      "desc": "",
+      "returns": {
+        "type": "void",
+        "desc": ""
+      }
+    },
+    {
+      "name": "buyNFT",
+      "args": [
+        {
+          "name": "orderId",
+          "type": "uint64",
+          "desc": ""
+        },
+        {
+          "name": "payment",
+          "type": "pay",
+          "desc": ""
+        }
+      ],
+      "desc": "",
+      "returns": {
+        "type": "void",
+        "desc": ""
+      }
+    },
+    {
+      "name": "getEventName",
+      "args": [
+        {
+          "name": "eventId",
+          "type": "uint64",
+          "desc": ""
+        }
+      ],
+      "desc": "",
+      "returns": {
+        "type": "string",
+        "desc": ""
+      }
+    },
+    {
+      "name": "getNFTAmountLeft",
+      "args": [
+        {
+          "name": "eventId",
+          "type": "uint64",
+          "desc": ""
+        },
+        {
+          "name": "nftType",
+          "type": "uint64",
+          "desc": ""
+        }
+      ],
+      "desc": "",
+      "returns": {
+        "type": "uint64",
+        "desc": ""
+      }
+    },
+    {
+      "name": "getNFTPrice",
+      "args": [
+        {
+          "name": "eventId",
+          "type": "uint64",
+          "desc": ""
+        },
+        {
+          "name": "nftType",
+          "type": "uint64",
+          "desc": ""
+        }
+      ],
+      "desc": "",
+      "returns": {
+        "type": "uint64",
+        "desc": ""
+      }
+    },
+    {
+      "name": "getEventByNFT",
+      "args": [
+        {
+          "name": "nftIndex",
+          "type": "uint64",
+          "desc": ""
+        }
+      ],
+      "desc": "",
+      "returns": {
+        "type": "uint64",
+        "desc": ""
+      }
+    },
+    {
+      "name": "getNFTType",
+      "args": [
+        {
+          "name": "nftIndex",
+          "type": "uint64",
+          "desc": ""
+        }
+      ],
+      "desc": "",
+      "returns": {
+        "type": "uint64",
+        "desc": ""
+      }
+    },
+    {
+      "name": "getNFTAsset",
+      "args": [
+        {
+          "name": "nftIndex",
+          "type": "uint64",
+          "desc": ""
+        }
+      ],
+      "desc": "",
+      "returns": {
+        "type": "uint64",
+        "desc": ""
+      }
+    },
+    {
+      "name": "getOrderOwner",
+      "args": [
+        {
+          "name": "orderId",
+          "type": "uint64",
+          "desc": ""
+        }
+      ],
+      "desc": "",
+      "returns": {
+        "type": "address",
+        "desc": ""
+      }
+    },
+    {
+      "name": "getOrderNFT",
+      "args": [
+        {
+          "name": "orderId",
+          "type": "uint64",
+          "desc": ""
+        }
+      ],
+      "desc": "",
+      "returns": {
+        "type": "uint64",
+        "desc": ""
+      }
+    },
+    {
+      "name": "getOrderPrice",
+      "args": [
+        {
+          "name": "orderId",
+          "type": "uint64",
+          "desc": ""
+        }
+      ],
+      "desc": "",
+      "returns": {
+        "type": "uint64",
+        "desc": ""
+      }
+    },
+    {
+      "name": "getOrderStatus",
+      "args": [
+        {
+          "name": "orderId",
+          "type": "uint64",
+          "desc": ""
+        }
+      ],
+      "desc": "",
+      "returns": {
+        "type": "uint64",
+        "desc": ""
+      }
+    }
+  ]
+}
