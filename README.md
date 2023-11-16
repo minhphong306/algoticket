@@ -31,8 +31,14 @@ AlgoTicket operates on a transaction-based revenue model, earning a percentage f
 ## Technical flow
 
 ## Team
+- Backend & smart contract: Phong Do
+- Smart contract: Henry
+- Frontend: Dung Nghiem
+- Frontend: Duan Nguyen
 
 ## Demo
+- https://algo-ticket.vercel.app/
+- https://www.youtube.com/playlist?list=PLKBnRuL2atAlFctBccnHQ8zZ9bf7pZUw5
 
 ## Vision
 AlgoTicket envisions a future where event ticketing is fair, transparent, and globally accessible. We aim to foster stronger connections between event creators and their communities while contributing to a sustainable and innovative live events ecosystem. Join us in shaping the future of ticketing with AlgoTicket.
