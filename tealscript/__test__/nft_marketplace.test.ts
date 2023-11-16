@@ -1,8 +1,9 @@
 import { describe, test, expect, beforeAll, beforeEach } from '@jest/globals';
 import { algorandFixture } from '@algorandfoundation/algokit-utils/testing';
-import { NftMarketplaceClient } from '../contracts/clients/NftMarketplaceClient';
 import * as algokit from '@algorandfoundation/algokit-utils';
 import algosdk, { Kmd } from 'algosdk';
+import { NftMarketplaceClient } from '../contracts/clients/NftMarketplaceClient';
+
 const fixture = algorandFixture();
 
 let appClient: NftMarketplaceClient;
@@ -32,13 +33,12 @@ describe('NftMarketplace', () => {
     console.log(appAddress);
   });
 
-
   test('mintNFT', async () => {
     await appClient.appClient.fundAppAccount(algokit.microAlgos(500_000));
     const bootstrapResult = await appClient.mintNft(
       {
-        name: "t1 vs weibo",
-        url: "https://google.com",
+        name: 't1 vs weibo',
+        url: 'https://google.com',
       },
       {
         sendParams: {
@@ -70,25 +70,25 @@ describe('NftMarketplace', () => {
     }
   });
 
-  test('mapNFTdata', async() => {
+  test('mapNFTdata', async () => {
     const template = new TextEncoder().encode('n');
     const combined = new Uint8Array([...template, ...algosdk.encodeUint64(0)]);
     try {
       await appClient.mapNfTdata(
         {
-          nft: nft, 
-          eventId: 0, 
-          nftType: 1
+          nft,
+          eventId: 0,
+          nftType: 1,
         },
         { boxes: [combined] }
       );
-    } catch(e) {
+    } catch (e) {
       console.warn(e);
       throw e;
     }
   });
 
-  test('buyNFTfromEvent', async() => {
+  test('buyNFTfromEvent', async () => {
     const temp = await appClient.getApplicationAddress({});
     const appAddress = temp.return!.valueOf();
     console.log(appAddress);
@@ -101,37 +101,36 @@ describe('NftMarketplace', () => {
     });
 
     // opted in
-    const registeredAsaOptInTxn = algosdk.makeAssetTransferTxnWithSuggestedParamsFromObject(
-      {
-        from: testAccount2.addr,
-        to: testAccount2.addr,
-        amount: 0,
-        suggestedParams: await algokit.getTransactionParams(undefined, algod2),
-        assetIndex: Number(nft),
-      },
-    );
+    const registeredAsaOptInTxn = algosdk.makeAssetTransferTxnWithSuggestedParamsFromObject({
+      from: testAccount2.addr,
+      to: testAccount2.addr,
+      amount: 0,
+      suggestedParams: await algokit.getTransactionParams(undefined, algod2),
+      assetIndex: Number(nft),
+    });
 
     await algokit.sendTransaction({ from: testAccount2, transaction: registeredAsaOptInTxn }, algod2);
 
-
-
     try {
       await appClient.buyNftFromEvent(
-        { payment: payment, nft: nft},
-        {sender: testAccount2, 
+        { payment, nft },
+        {
+          sender: testAccount2,
           sendParams: {
-          fee: algokit.microAlgos(3000),
-        }});
-    } catch(e) {
+            fee: algokit.microAlgos(3000),
+          },
+        }
+      );
+    } catch (e) {
       console.warn(e);
       throw e;
     }
-  })
+  });
 
   test('listing nft', async () => {
     const template = new TextEncoder().encode('o');
     const combined = new Uint8Array([...template, ...algosdk.encodeUint64(0)]);
-    
+
     const axfer = algosdk.makeAssetTransferTxnWithSuggestedParamsFromObject({
       from: testAccount2.addr,
       to: appAddress,
@@ -144,12 +143,11 @@ describe('NftMarketplace', () => {
     try {
       await appClient.listingNft(
         {
-          nft: nft,
+          nft,
           price: 100,
-          axfer
+          axfer,
         },
-        { sender: testAccount2,
-          boxes: [combined] }
+        { sender: testAccount2, boxes: [combined] }
       );
     } catch (e) {
       console.warn(e);
@@ -181,7 +179,6 @@ describe('NftMarketplace', () => {
   // });
 
   test('buyNFTFromMarketplace', async () => {
-
     const payment = algosdk.makePaymentTxnWithSuggestedParamsFromObject({
       from: testAccount2.addr,
       to: appAddress,
@@ -190,15 +187,13 @@ describe('NftMarketplace', () => {
     });
 
     // opted in
-    const registeredAsaOptInTxn = algosdk.makeAssetTransferTxnWithSuggestedParamsFromObject(
-      {
-        from: testAccount2.addr,
-        to: testAccount2.addr,
-        amount: 0,
-        suggestedParams: await algokit.getTransactionParams(undefined, algod2),
-        assetIndex: Number(nft),
-      },
-    );
+    const registeredAsaOptInTxn = algosdk.makeAssetTransferTxnWithSuggestedParamsFromObject({
+      from: testAccount2.addr,
+      to: testAccount2.addr,
+      amount: 0,
+      suggestedParams: await algokit.getTransactionParams(undefined, algod2),
+      assetIndex: Number(nft),
+    });
 
     await algokit.sendTransaction({ from: testAccount2, transaction: registeredAsaOptInTxn }, algod2);
 
@@ -207,12 +202,12 @@ describe('NftMarketplace', () => {
         {
           orderId: 0,
           payment,
-          nft: nft,
+          nft,
         },
         {
           sendParams: {
             fee: algokit.microAlgos(2000),
-          } 
+          },
         }
       );
     } catch (e) {
@@ -220,5 +215,4 @@ describe('NftMarketplace', () => {
       throw e;
     }
   });
-
 });
