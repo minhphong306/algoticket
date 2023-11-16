@@ -28,7 +28,8 @@ AlgoTicket operates on a transaction-based revenue model, earning a percentage f
 
 **3. Recurring Revenue for Organizers:** Unlike conventional ticketing platforms, AlgoTicket introduces a groundbreaking feature—organizers can earn recurring revenue through royalties on ticket resales. Smart contracts enable automatic royalty distribution structures, turning each resale into an ongoing revenue stream for event organizers and their partners. This innovative approach transforms the secondary market into a lucrative opportunity for sustained profitability.
 
-## Technical flow
+## Try it out
+https://algo-ticket.vercel.app/
 
 ## Team
 - Backend & smart contract: Phong Do
@@ -37,7 +38,7 @@ AlgoTicket operates on a transaction-based revenue model, earning a percentage f
 - Frontend: Duan Nguyen
 
 ## Demo
-- https://algo-ticket.vercel.app/
+- [Try it out](https://algo-ticket.vercel.app/)
 - https://www.youtube.com/playlist?list=PLKBnRuL2atAlFctBccnHQ8zZ9bf7pZUw5
 
 ## Vision
